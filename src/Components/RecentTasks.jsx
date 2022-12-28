@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaCheck, FaSpinner } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const RecentTasks = () => {
   const [tasks, setTasks] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000")
+    fetch("https://task-tracker-server.vercel.app")
       .then((res) => res.json())
       .then((data) => setTasks(data.result));
   }, []);
@@ -21,9 +21,15 @@ const RecentTasks = () => {
             className="p-7 flex-1 hover:scale-105 duration-300 flex justify-between items-center rounded-2xl text-xl font-bold bg-amber-400 text-blue-800"
           >
             <h1>
-              Task : <span className="text-rose-600">{task.title}</span>
+              <span className="text-rose-600">{task.title}</span>
             </h1>
-            <h1 className="text-xs">{task.completed ? "Done" : "Pending"}</h1>
+            <h1 className="text-base  font-extrabold">
+              {task.completed ? (
+                <FaCheck className="text-base animate-pulse text-green-500 border box-content bg-white rounded-full p-1 "></FaCheck>
+              ) : (
+                <FaSpinner className="animate-spin text-blue-700 border box-content bg-white rounded-full p-1 "></FaSpinner>
+              )}
+            </h1>
           </div>
         ))}
       </div>

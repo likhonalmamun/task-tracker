@@ -1,6 +1,6 @@
 import React from "react";
 import { toast } from "react-hot-toast";
-import { FaPlusCircle, FaUpload } from "react-icons/fa";
+import { FaPlus, FaPlusCircle, FaUpload } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const NewTask = () => {
@@ -24,7 +24,7 @@ const NewTask = () => {
           image: img.data.display_url,
         };
         // https://task-tracker-server.vercel.app
-        fetch("http://localhost:5000", {
+        fetch("https://task-tracker-server.vercel.app", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(task),
@@ -71,7 +71,8 @@ const NewTask = () => {
                 className="text-lg flex items-center gap-2 hover:border-blue-600 bg-rose-500 mx-5 px-4 py-1 uppercase border-2 duration-300 rounded-md font-bold text-white"
                 htmlFor="image"
               >
-                <span>Upload</span> <FaUpload></FaUpload>
+                <span>Upload</span>{" "}
+                <FaUpload className="bg-white text-rose-500 rounded-full p-1 box-content text-sm"></FaUpload>
               </label>
             </div>
             <input
@@ -98,10 +99,11 @@ const NewTask = () => {
           </div>
         </div>
         <button
-          className="text-lg mt-7 flex items-center gap-3 justify-center    hover:border-blue-600 bg-amber-400  w-[88%]  mx-auto px-4 py-1 uppercase border-2 duration-300 rounded-md font-bold text-blue-900"
+          className="text-lg mt-7 flex items-center gap-3 justify-center   hover:scale-y-110 hover:border-blue-600 bg-amber-400  w-[88%]  mx-auto px-4 py-1 uppercase border-2 duration-300 rounded-md font-bold text-blue-900"
           type="submit"
         >
-          <span>Add Task</span> <FaPlusCircle></FaPlusCircle>
+          <span>Add Task</span>{" "}
+          <FaPlus className="bg-white rounded-full p-1 font-bold box-content text-xs"></FaPlus>
         </button>
       </form>
     </div>
