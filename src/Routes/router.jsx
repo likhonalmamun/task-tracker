@@ -9,6 +9,7 @@ import Login from "../Pages/Login";
 import MyTasks from "../Pages/MyTasks";
 import Register from "../Pages/Register";
 import TaskDetails from "../Pages/TaskDetails";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -20,7 +21,12 @@ export const router = createBrowserRouter([
       { path: "/my-tasks", element: <MyTasks></MyTasks> },
       {
         path: "/my-tasks/:id",
-        element: <TaskDetails></TaskDetails>,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <TaskDetails></TaskDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`https://task-tracker-server.vercel.app/my-tasks/${params.id}`),
       },

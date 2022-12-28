@@ -1,6 +1,6 @@
 import React from "react";
 import { toast } from "react-hot-toast";
-import { FaPlus, FaPlusCircle, FaUpload } from "react-icons/fa";
+import { FaPlus, FaUpload } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const NewTask = () => {

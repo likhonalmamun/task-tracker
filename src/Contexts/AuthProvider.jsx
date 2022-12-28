@@ -34,13 +34,7 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
-  const updateUserProfile = (name, photo) => {
-    setLoading(true);
-    return updateProfile(auth.currentUser, {
-      displayName: name,
-      photoURL: photo,
-    });
-  };
+
   useEffect(() => {
     const cleanUp = onAuthStateChanged(auth, (createUser) => {
       setUser(createUser);
@@ -55,7 +49,6 @@ const AuthProvider = ({ children }) => {
     signInWithPass,
     logOut,
     createUser,
-    updateUserProfile,
     googleLogin,
   };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

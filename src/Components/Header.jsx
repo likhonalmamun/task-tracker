@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Contexts/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
   return (
     <div className="flex px-20 bg-gray-100 h-20 items-center  justify-between">
       <div className="text-3xl font-bold italic ">
@@ -23,12 +25,20 @@ const Header = () => {
           <li className="hover:text-rose-500 hover:scale-110 duration-300">
             <Link to="/completed-tasks">Completed Tasks</Link>
           </li>
-          <li className="hover:text-rose-500 hover:scale-110 duration-300">
-            <Link to="/login">Login</Link>
-          </li>
-          <li className="hover:text-rose-500 hover:scale-110 duration-300">
-            <Link to="/register">Register</Link>
-          </li>
+          {user ? (
+            <li>
+              <button
+                onClick={logOut}
+                className="py-1 px-5 font-bold bg-rose-500 text-white rounded-md"
+              >
+                Logout
+              </button>
+            </li>
+          ) : (
+            <li className="hover:text-rose-500 hover:scale-110 duration-300">
+              <Link to="/login">Login</Link>
+            </li>
+          )}
         </ul>
       </div>
     </div>
