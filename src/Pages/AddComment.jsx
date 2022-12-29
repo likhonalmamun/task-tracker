@@ -20,13 +20,13 @@ const AddComment = () => {
       });
   };
   return (
-    <div className="border border-blue-500 rounded-md my-14 p-10">
-      <h1 className="text-2xl font-bold  text-center mb-7 text-amber-500">
+    <div className="border border-blue-500 rounded-md my-14 p-3 lg:p-10">
+      <h1 className="sm:text-2xl text-xl font-bold  text-center mb-7 text-amber-500">
         Add comment on completing the task
       </h1>
       <form
         onSubmit={completeTask}
-        className="mx-auto w-2/5 text-lg font-bold text-rose-500"
+        className="mx-auto md:w-2/5 text-lg font-bold text-rose-500"
       >
         <label htmlFor="">Comment : </label> <br />
         <input

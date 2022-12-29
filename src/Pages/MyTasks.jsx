@@ -25,7 +25,7 @@ const MyTasks = () => {
   };
   return (
     <div>
-      <div className="p-10 border border-blue-500 rounded-md">
+      <div className="lg:p-10  p-3 border border-blue-500 rounded-md">
         <h1 className="text-2xl font-bold  text-center mb-7 text-blue-500">
           All Pending Tasks ({tasks.length})
         </h1>
@@ -33,14 +33,14 @@ const MyTasks = () => {
           {tasks.map((task) => (
             <div
               key={task._id}
-              className="flex justify-between rounded-lg hover:scale-y-125 border-blue-500 duration-300 bg-gray-300 text-lg font-bold text-white px-5 border-2 py-4 mb-5"
+              className="flex justify-between gap-5 sm:flex-row flex-col rounded-lg hover:scale-y-125 border-blue-500 duration-300 bg-gray-300 text-lg font-bold text-white px-5 border-2 py-4 mb-5"
             >
               <div>
                 <h1 className="text-center font-bold text-rose-600 mb-3">
                   {task.title}
                 </h1>
                 <Link
-                  className="border flex items-center gap-2 bg-amber-500 hover:text-blue-600 duration-300 rounded-lg text-sm px-4 py-1"
+                  className="border flex justify-center items-center gap-2 w-full sm:w-[145px] bg-amber-500 hover:text-blue-600 duration-300 rounded-lg text-sm px-4 py-1"
                   to={`/my-tasks/${task._id}`}
                 >
                   <span>View Details</span>{" "}
@@ -55,7 +55,7 @@ const MyTasks = () => {
                   <FaRegEdit></FaRegEdit>
                 </Link>
                 <Link
-                  className="px-4 py-1 flex items-center gap-2 hover:bg-blue-800 duration-300 bg-blue-500 rounded-md"
+                  className="px-4 py-1 flex-1 text-base justify-center flex items-center gap-2 hover:bg-blue-800 duration-300 bg-blue-500 rounded-md"
                   to={`/complete-task/${task._id}`}
                 >
                   <span>Completed</span> <FaCheckCircle></FaCheckCircle>

@@ -31,7 +31,7 @@ const Header = () => {
     }
   };
   return (
-    <div className="flex px-20 bg-gray-100 h-20 items-center  justify-between">
+    <div className="flex px-5 lg:px-20 bg-gray-100 h-20 items-center  justify-between">
       <div className="text-3xl font-bold italic ">
         <span className="text-blue-500">T</span>
         <span className="text-amber-600">-</span>

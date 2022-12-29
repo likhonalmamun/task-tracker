@@ -30,7 +30,7 @@ const CompletedTask = () => {
       });
   };
   return (
-    <div className="border rounded-md my-10 border-blue-500 p-10">
+    <div className="border rounded-md my-10 border-blue-500 p-3 lg:p-10">
       <h1 className="text-2xl font-bold  text-center mb-7 text-rose-500">
         All Completed Tasks ({tasks.length})
       </h1>
@@ -38,7 +38,7 @@ const CompletedTask = () => {
         {tasks.map((task) => (
           <div
             key={task._id}
-            className="bg-[rgb(217,218,220)] text-blue-600 my-7 items-center p-5 rounded-md flex justify-between"
+            className="bg-[rgb(217,218,220)] text-blue-600 my-7 items-center p-5 gap-7 flex-col sm:flex-row rounded-md flex justify-between"
           >
             <div>
               <h1 className="text-xl font-bold my-2">{task.title}</h1>
@@ -47,7 +47,7 @@ const CompletedTask = () => {
                 <span className="text-blue-500 italic">{task.comment}</span>
               </p>
             </div>
-            <div>
+            <div className="flex">
               <button
                 onClick={() => incompleteTask(task._id)}
                 className="font-bold  px-3 hover:scale-95 duration-300 hover:bg-gray-100 py-1 bg-white rounded-md border text-amber-500"

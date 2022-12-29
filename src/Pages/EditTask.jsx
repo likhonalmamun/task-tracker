@@ -28,15 +28,15 @@ const EditTask = () => {
     <div>
       <form
         onSubmit={editTask}
-        className="p-10 rounded-md border border-blue-500"
+        className="lg:p-10 p-2 rounded-md border border-blue-500"
         action=""
       >
         <h1 className="text-2xl font-bold  text-center mb-7 text-rose-500">
           Edit task
         </h1>
-        <div className="flex justify-evenly items-center">
-          <div className="w-[40%]">
-            <label className="text-lg font-bold text-blue-500" htmlFor="">
+        <div className="flex flex-col sm:flex-row gap-4 justify-evenly items-center">
+          <div className="sm:w-[40%] w-full">
+            <label className="sm:text-lg font-bold text-blue-500" htmlFor="">
               Title :
             </label>
             <br />
@@ -49,7 +49,10 @@ const EditTask = () => {
               placeholder="enter task title"
             />
 
-            <label className="text-lg font-bold text-blue-500" htmlFor="image">
+            <label
+              className="sm:text-lg font-bold text-blue-500"
+              htmlFor="image"
+            >
               Image URL :
             </label>
             <br />
@@ -63,8 +66,8 @@ const EditTask = () => {
               placeholder="new image URL"
             />
           </div>
-          <div className="w-[40%]">
-            <label className="text-lg font-bold text-blue-500" htmlFor="">
+          <div className="sm:w-[40%] w-full">
+            <label className="sm:text-lg font-bold text-blue-500" htmlFor="">
               Description :
             </label>
             <br />
@@ -79,7 +82,7 @@ const EditTask = () => {
             ></textarea>
           </div>
         </div>
-        <div className="flex mx-auto w-[88%] gap-5 justify-center">
+        <div className="flex mx-auto sm:w-[88%] gap-5 justify-center">
           <button
             className="text-lg flex-1  mt-7 flex items-center gap-3 justify-center  
             hover:border-blue-600 bg-amber-400 py-1 uppercase hover:scale-y-110

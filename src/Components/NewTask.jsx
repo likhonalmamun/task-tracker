@@ -41,15 +41,15 @@ const NewTask = () => {
     <div>
       <form
         onSubmit={addTask}
-        className="p-10 rounded-md border border-blue-500"
+        className="lg:p-10 p-5 rounded-md border border-blue-500"
         action=""
       >
         <h1 className="text-2xl font-bold  text-center mb-7 text-rose-500">
           Add new task
         </h1>
-        <div className="flex justify-evenly items-center">
-          <div className="w-[40%]">
-            <label className="text-lg font-bold text-blue-500" htmlFor="">
+        <div className="sm:flex justify-evenly items-center">
+          <div className="lg:w-[40%]">
+            <label className="sm:text-lg font-bold text-blue-500" htmlFor="">
               Title :
             </label>
             <br />
@@ -62,13 +62,13 @@ const NewTask = () => {
             />
             <div className="flex items-center mt-2">
               <label
-                className="text-lg font-bold text-blue-500"
+                className="sm:text-lg font-bold text-blue-500"
                 htmlFor="image"
               >
                 Task Image :
               </label>
               <label
-                className="text-lg flex items-center gap-2 hover:border-blue-600 bg-rose-500 mx-5 px-4 py-1 uppercase border-2 duration-300 rounded-md font-bold text-white"
+                className="sm:text-lg flex items-center gap-2 hover:border-blue-600 bg-rose-500 mx-5 px-4 py-1 uppercase border-2 duration-300 rounded-md font-bold text-white"
                 htmlFor="image"
               >
                 <span>Upload</span>{" "}
@@ -83,8 +83,8 @@ const NewTask = () => {
               id="image"
             />
           </div>
-          <div className="w-[40%]">
-            <label className="text-lg font-bold text-blue-500" htmlFor="">
+          <div className="lg:w-[40%]">
+            <label className="sm:text-lg font-bold text-blue-500" htmlFor="">
               Description :
             </label>
             <br />

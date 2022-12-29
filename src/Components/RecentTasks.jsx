@@ -14,11 +14,11 @@ const RecentTasks = () => {
       <h1 className="text-2xl font-bold  text-center mb-7 text-rose-500">
         Recent tasks ({tasks.length})
       </h1>
-      <div className="flex flex-wrap gap-7 justify-evenly">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 ">
         {tasks.map((task) => (
           <div
             key={task._id}
-            className="p-7 flex-1 hover:scale-105 duration-300 flex justify-between items-center rounded-2xl text-xl font-bold bg-amber-400 text-blue-800"
+            className="p-7 hover:scale-105 duration-300 flex justify-between items-center rounded-2xl text-xl font-bold bg-amber-400 text-blue-800"
           >
             <h1>
               <span className="text-rose-600">{task.title}</span>
